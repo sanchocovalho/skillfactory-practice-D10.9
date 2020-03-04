@@ -41,6 +41,9 @@
    - heroku config:set SECRET_KEY=Ваш_секретный_код
    - heroku config:set DISABLE_COLLECTSTATIC=1
    - git push heroku master
+   - heroku config:unset DISABLE_COLLECTSTATIC
+   - heroku run python manage.py collectstatic --noinput
+   - heroku run python manage.py makemigrations
    - heroku run python manage.py migrate
    - heroku run python manage.py createsuperuser
 3) Если необходимо переименовываем приложение:
