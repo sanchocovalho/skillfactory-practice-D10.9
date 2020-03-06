@@ -3,7 +3,7 @@
 {% block title %}Список автомобилей{% endblock %}
 
 {% block content %}
-    <header class="container-fluid bg-secondary">
+    <header class="container-fluid sticky-top bg-secondary" style="border:1px solid #fff;">
         <div class="d-flex flex-md-row flex-sm-column flex-column justify-content-between align-items-center">
             <div class="text-white my-2">
                 <img src="media/icon/logo.png" alt="">
@@ -45,11 +45,13 @@
                     {% for car in object_list %}
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                         <div class="card shadow p-1 bg-secondary rounded">
+                            <div style="position:relative;padding-bottom:75%;">
                             {%if car.photo %}
-                            <img src="{{ car.photo.url }}" class="card-img-top" alt="">
+                                <img src="{{ car.photo.url }}" class="w-100 h-100" style="position:absolute;top:0;left:0;object-fit:cover;" alt="">
                             {% else %}
-                            <img src="media/photos/default.jpg" class="card-img-top" alt="">
+                                <img src="media/photos/default.jpg" class="w-100 h-100" style="position:absolute;top:0;left:0;object-fit:cover;" alt="">
                             {% endif %}
+                            </div>
                             <div class="card-body text-white">
                                 <h4 class="card-title font-weight-bold">{{ car.manufacturer }}</h4>
                                 <p class="card-title"><span class="font-weight-bold text-dark">Модель:</span> {{ car.model }}</p>

@@ -39,10 +39,10 @@
    - heroku create
    - heroku addons:create heroku-postgresql --as DATABASE
    - heroku config:set SECRET_KEY=Ваш_секретный_код
-   - heroku config:set DISABLE_COLLECTSTATIC=1
+   - heroku config:set DISABLE_COLLECTSTATIC=1 (опционально)
    - git push heroku master
-   - heroku config:unset DISABLE_COLLECTSTATIC
-   - heroku run python manage.py collectstatic --noinput
+   - heroku config:unset DISABLE_COLLECTSTATIC (опционально)
+   - heroku run python manage.py collectstatic --noinput (опционально)
    - heroku run python manage.py makemigrations
    - heroku run python manage.py migrate
    - heroku run python manage.py createsuperuser
@@ -51,6 +51,7 @@
 4) Запускаем приложение:
    - heroku open
 
+Данный проект находится на https://carcatalog-skillfactory.herokuapp.com/
 По умолчанию логин и пароль для пользователя-администратора в проекте:
 - Логин: pws_admin
 - Пароль: sf_password

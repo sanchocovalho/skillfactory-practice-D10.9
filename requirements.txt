@@ -4,4 +4,5 @@ sqlparse
 asgiref
 pytz
 dj_database_url
+whitenoise
 pillow
